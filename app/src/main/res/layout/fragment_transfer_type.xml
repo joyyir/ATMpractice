@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="joyyir.atmpractice.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:background="@color/atm_display_bg"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="취소"
+                android:id="@+id/btnTtypeCancel"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:background="@drawable/main_red_button"
+                android:layout_margin="6dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/text_transfer_type"
+                android:text="이체유형선택"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:singleLine="false"
+                android:enabled="false" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"></LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="3">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgTransferCaution"
+                    android:src="@drawable/transfer_caution"
+                    android:layout_margin="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="계좌이체"
+                    android:id="@+id/btnTransferAccount"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="경조이체"
+                    android:id="@+id/btnTransferEvent"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="아파트관리비이체"
+                    android:id="@+id/btnTransferApt"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="메시지이체"
+                    android:id="@+id/btnTransferMsg"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="해외송금"
+                    android:id="@+id/btnTransferAbroad"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:text="퇴직연금이체"
+                    android:id="@+id/btnTransferPension"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
