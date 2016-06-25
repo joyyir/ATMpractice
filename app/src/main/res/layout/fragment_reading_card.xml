@@ -7,8 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="joyyir.atmpractice.MainActivity"
-    android:id="@+id/ll_fragment_atm">
+    tools:context="joyyir.atmpractice.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,6 +20,12 @@
             android:layout_margin="5dp"
             android:orientation="horizontal">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgReadingCard"
+                android:src="@drawable/reading_card"
+                android:layout_margin="30dp" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
