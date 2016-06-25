@@ -1,6 +1,8 @@
 package joyyir.atmpractice;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,7 +20,26 @@ public class MainFragment extends Fragment {
         btnTransfer.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm, new ReadingCardFragment());
+                Handler handler = new Handler(){
+                    @Override
+                    public void handleMessage(Message msg) {
+                        super.handleMessage(msg);
+                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new FraudCautionFragment());
+                    }
+                };
+                handler.sendEmptyMessageDelayed(0, 5000);
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ReadingCardFragment());
+//                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ReadingCardFragment());
+//                Thread thread = new Thread(){
+//                    @Override
+//                    public void run() {
+//                        //super.run();
+//                        try{ Thread.sleep(3000); }catch(InterruptedException e){ e.printStackTrace(); }
+//                    }
+//                };
+//                thread.start();
+//                try{ thread.join(); } catch(InterruptedException e){ e.printStackTrace(); }
+//                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new FraudCautionFragment());
             }
         });
 

@@ -3,187 +3,151 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="joyyir.atmpractice.MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:background="@color/atm_display_bg"
+        android:orientation="horizontal">
+
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="3"
-            android:background="#001ea4"
-            android:layout_margin="5dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
+            android:layout_weight="1"
+            android:layout_height="match_parent">
 
 
-                <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:id="@+id/imgMainLogo"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/shinhan_logo"
-                    android:layout_weight="1" />
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:id="@+id/imgMainLogo"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/shinhan_logo"
+                android:layout_weight="1" />
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="예금출금"
-                    android:id="@+id/btnMainWithdrawal"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/main_normal_button"
-                    android:layout_margin="3dp"
-                    android:textSize="18dp"
-                    android:layout_weight="1" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="입금/무통장송금"
-                    android:id="@+id/btnMainReceipt"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="12dp"
-                    android:background="@drawable/main_normal_button"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="계좌이체"
-                    android:id="@+id/btnMainTransfer"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/main_normal_button"
-                    android:layout_margin="3dp"
-                    android:textSize="18dp"
-                    android:layout_weight="1" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="통장정리"
-                    android:id="@+id/btnMainUpdateBook"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/main_normal_button"
-                    android:layout_margin="3dp"
-                    android:textSize="18dp"
-                    android:layout_weight="1" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="예금출금"
+                android:id="@+id/btnMainWithdrawal"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:textSize="18dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="입금/무통장송금"
+                android:id="@+id/btnMainReceipt"
+                android:layout_gravity="center_horizontal"
+                android:textSize="12dp"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="계좌이체"
+                android:id="@+id/btnMainTransfer"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:textSize="18dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="통장정리"
+                android:id="@+id/btnMainUpdateBook"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:textSize="18dp"
+                android:layout_weight="1" />
 
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="LINEPAY"
-                    android:id="@+id/btnMainExchange"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/main_normal_button"
-                    android:layout_margin="3dp"
-                    android:textSize="15dp"
-                    android:layout_weight="1" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="LINEPAY"
+                android:id="@+id/btnMainExchange"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:textSize="15dp"
+                android:layout_weight="1" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="match_parent"></LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"></LinearLayout>
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="예금조회"
-                    android:id="@+id/btnMainInquery"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/main_normal_button"
-                    android:layout_margin="3dp"
-                    android:textSize="18dp"
-                    android:layout_weight="1" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="신용카드/카드론"
-                    android:id="@+id/btnMainCreditCard"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="12dp"
-                    android:background="@drawable/main_normal_button"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="모바일상품권/캐시비/hi-pass/전자화폐/T-money"
-                    android:id="@+id/btnMainMobile"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="8.5dp"
-                    android:background="@drawable/main_normal_button"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="지방세/지로공과금/등록금/송달료/소송등인지대"
-                    android:id="@+id/btnMainTax"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="8.5dp"
-                    android:background="@drawable/main_normal_button"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="0dp"
-                    android:text="다른 업무/Foreign Languages"
-                    android:id="@+id/btnMainOther"
-                    android:layout_gravity="center_horizontal"
-                    android:textSize="8.5dp"
-                    android:background="@drawable/main_green_button"
-                    android:layout_margin="3dp"
-                    android:layout_weight="1" />
-            </LinearLayout>
         </LinearLayout>
         <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="0dp"
-            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:layout_height="match_parent"></LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
             android:layout_weight="1"
-            android:background="#6d6d6d"
-            android:layout_margin="5dp"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/imageView"
-                    android:src="@drawable/atm_card_hole"
-                    android:padding="10dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"></LinearLayout>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="예금조회"
+                android:id="@+id/btnMainInquery"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:textSize="18dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="신용카드/카드론"
+                android:id="@+id/btnMainCreditCard"
+                android:layout_gravity="center_horizontal"
+                android:textSize="12dp"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="모바일상품권/캐시비/hi-pass/전자화폐/T-money"
+                android:id="@+id/btnMainMobile"
+                android:layout_gravity="center_horizontal"
+                android:textSize="8.5dp"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="지방세/지로공과금/등록금/송달료/소송등인지대"
+                android:id="@+id/btnMainTax"
+                android:layout_gravity="center_horizontal"
+                android:textSize="8.5dp"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:layout_weight="1" />
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="다른 업무/Foreign Languages"
+                android:id="@+id/btnMainOther"
+                android:layout_gravity="center_horizontal"
+                android:textSize="8.5dp"
+                android:background="@drawable/main_green_button"
+                android:layout_margin="3dp"
+                android:layout_weight="1" />
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

@@ -12,4 +12,6 @@
     <color name="default2">#40474f</color>
     <color name="stroke">#00000000</color>
 
+    <color name="atm_display_bg">#1f4e79</color>
+
 </resources>
