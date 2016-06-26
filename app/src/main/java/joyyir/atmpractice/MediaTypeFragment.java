@@ -10,25 +10,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class MainFragment extends Fragment {
+public class MediaTypeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_media_type, container, false);
 
-        Button btnTransfer = (Button)view.findViewById(R.id.btnMainTransfer);
-        btnTransfer.setOnClickListener(new View.OnClickListener(){
+        Button btnMediaCash = (Button)view.findViewById(R.id.btnMediaCash);
+        btnMediaCash.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Handler handler = new Handler(){
                     @Override
                     public void handleMessage(Message msg) {
                         super.handleMessage(msg);
-                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new FraudCautionFragment());
+                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new InstSelectionFragment());
                     }
                 };
                 handler.sendEmptyMessageDelayed(0, Common.DELAY);
-                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ReadingCardFragment());
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ProcessingFragment());
             }
         });
 

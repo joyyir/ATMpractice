@@ -24,10 +24,10 @@ public class TransferTypeFragment extends Fragment {
                     @Override
                     public void handleMessage(Message msg) {
                         super.handleMessage(msg);
-                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new DummyFragment());
+                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new MediaTypeFragment());
                     }
                 };
-                handler.sendEmptyMessageDelayed(0, 2500);
+                handler.sendEmptyMessageDelayed(0, Common.DELAY);
                 MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ProcessingFragment());
             }
         });

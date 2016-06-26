@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="joyyir.atmpractice.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:background="@color/atm_display_bg"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="취소"
+                android:id="@+id/btnInstSelCancel"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:background="@drawable/main_red_button"
+                android:layout_margin="6dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/text_inst_selection"
+                android:text="금융기관선택"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:singleLine="false"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="즐겨쓰는\n입금계좌조회"
+                android:id="@+id/btnInstSelOk"
+                android:layout_gravity="center"
+                android:textSize="11dp"
+                android:background="@drawable/main_green_button"
+                android:layout_margin="6dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ffffff"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이체하실 금융기관을 선택하여주십시오.\n찾으시는 금융기관이 없을 경우 [다 음]을 눌러 주십시오"
+                    android:id="@+id/textView"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3">
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="신한은행"
+                    android:id="@+id/btnInstShinhan"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="국민은행"
+                    android:id="@+id/btnInstKook"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="농협"
+                    android:id="@+id/btnInstNong"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="우리은행"
+                    android:id="@+id/btnInstWoori"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="하나은행"
+                    android:id="@+id/btnInstHana"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="제주은행"
+                    android:id="@+id/btnInstJeju"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="기업은행"
+                    android:id="@+id/btnInstGiup"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="외환은행"
+                    android:id="@+id/btnInstWhe"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="SC은행(제일)"
+                    android:id="@+id/btnInstSC"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="13dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="우체국"
+                    android:id="@+id/btnInstPost"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="한국씨티은행"
+                    android:id="@+id/btnInstCity"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="13dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="새마을금고"
+                    android:id="@+id/btnInstNew"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="15dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="부산은행"
+                    android:id="@+id/btnInstBusan"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="대구은행"
+                    android:id="@+id/btnInstDaegu"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="수협"
+                    android:id="@+id/btnInstSu"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:textSize="18dp"
+                    android:layout_weight="1" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp"></LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="3dp" />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:text="다음"
+                    android:id="@+id/btnInstNext"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/main_orange_button"
+                    android:layout_margin="3dp"
+                    android:textSize="15dp"
+                    android:layout_weight="1" />
+
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+
+</RelativeLayout>

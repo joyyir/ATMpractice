@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="joyyir.atmpractice.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:background="@color/atm_display_bg"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="취소"
+                android:id="@+id/btnAmtCancel"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:background="@drawable/main_red_button"
+                android:layout_margin="6dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/text_amount_confirm"
+                android:text="금액확인"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:singleLine="false"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="확인"
+                android:id="@+id/btnAmtOk"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:background="@drawable/main_green_button"
+                android:layout_margin="6dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_margin="10dp"
+                    android:background="#ffffff"
+                    android:gravity="center"
+                    android:layout_weight="4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이체하실 금액을 누르시고\n &apos;확인&apos;을 눌러 주십시오\n\n1회 최대한도 : 600만원"
+                        android:id="@+id/text_amount_confirm_msg"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textIsSelectable="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:id="@+id/etAmt"
+                        android:layout_weight="10"
+                        android:background="#ffa86f"
+                        android:layout_marginLeft="10dp"
+                        android:paddingLeft="10dp"
+                        android:textColor="#000000"
+                        android:editable="false"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="원"
+                        android:id="@+id/text_amount_confirm_won"
+                        android:background="#ffa86f"
+                        android:layout_weight="1"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#0000FF"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_margin="10dp">
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="1"
+                        android:id="@+id/btnAmt1"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="2"
+                        android:id="@+id/btnAmt2"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="3"
+                        android:id="@+id/btnAmt3"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="4"
+                        android:id="@+id/btnAmt4"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="5"
+                        android:id="@+id/btnAmt5"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="6"
+                        android:id="@+id/btnAmt6"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="7"
+                        android:id="@+id/btnAmt7"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="8"
+                        android:id="@+id/btnAmt8"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="9"
+                        android:id="@+id/btnAmt9"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="&lt;-"
+                        android:id="@+id/btnAmtBack"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="0"
+                        android:id="@+id/btnAmt0"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_normal_button"
+                        android:layout_margin="3dp"
+                        android:textSize="25dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="정정"
+                        android:id="@+id/btnAmtDel"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_orange_button"
+                        android:layout_margin="3dp"
+                        android:textSize="15dp"
+                        android:layout_weight="1" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" >
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="만"
+                        android:id="@+id/btnAmtMan"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_blue_button"
+                        android:layout_margin="3dp"
+                        android:textSize="15dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="천"
+                        android:id="@+id/btnAmtCheon"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_blue_button"
+                        android:layout_margin="3dp"
+                        android:textSize="15dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:text="원"
+                        android:id="@+id/btnAmtWon"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/main_blue_button"
+                        android:layout_margin="3dp"
+                        android:textSize="15dp"
+                        android:layout_weight="1" />
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
