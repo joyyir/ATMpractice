@@ -62,6 +62,7 @@ public class AccountNumberFragment extends Fragment {
         btnAccOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Common.setReceiverAccountNumber(et.getText().toString());
                 MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new AmountConfirmFragment());
             }
         });

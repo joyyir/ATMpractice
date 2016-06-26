@@ -1,6 +1,8 @@
 package joyyir.atmpractice;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -43,7 +45,15 @@ public class PasswordFragment extends Fragment {
                     Log.i("DEBUG", "current password: " + password);
                     et.getText().append("*");
                     if(password.length() == 4){
-                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new DummyFragment());
+                        Handler handler = new Handler(){
+                            @Override
+                            public void handleMessage(Message msg) {
+                                super.handleMessage(msg);
+                                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new TransferConfirmFragment());
+                            }
+                        };
+                        handler.sendEmptyMessageDelayed(0, Common.DELAY);
+                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ReadingCardFragment());
                     }
                 }
             });

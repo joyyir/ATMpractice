@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="joyyir.atmpractice.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:background="@color/atm_display_bg"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="취소"
+                android:id="@+id/btnTConfirmCancel"
+                android:layout_gravity="center"
+                android:textSize="14dp"
+                android:background="@drawable/main_red_button"
+                android:layout_margin="6dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/text_transfer_confirm"
+                android:text="이체내용확인"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:singleLine="false"
+                android:enabled="false" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="확인"
+                android:id="@+id/btnTConfirmOk"
+                android:layout_gravity="center"
+                android:textSize="14dp"
+                android:background="@drawable/main_green_button"
+                android:layout_margin="6dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/red_border"
+                    android:layout_margin="5dp"
+                    android:padding="5dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="* 전화사기 주의!"
+                        android:id="@+id/text_transfer_confirm_msg1"
+                        android:textColor="#ff0000"
+                        android:textSize="10dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="  고객님의 계좌에서"
+                            android:id="@+id/text_transfer_confirm_msg2"
+                            android:textColor="@color/atm_display_bg"
+                            android:layout_weight="1"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="123456789"
+                            android:id="@+id/text_transfer_confirm_amount2"
+                            android:textColor="@color/atm_display_bg"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:paddingRight="3dp"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="원이 이체됩니다."
+                            android:id="@+id/text_transfer_confirm_msg3"
+                            android:textColor="@color/atm_display_bg"
+                            android:layout_weight="1"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|center_horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="내용이 맞으면 [확인]을, 틀리면 [취소]를 눌러 주십시오\n의뢰인 변경 또는 입금 통장의 표시 내용을 변경하시려면\n[의뢰인 변경 또는 입금통장 표시내용 변경]을 눌러 주십시오"
+                        android:id="@+id/text_transfer_confirm_msg4"
+                        android:textColor="#000000"
+                        android:textSize="10dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_border"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="5dp">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="은        행       명 :  "
+                                android:id="@+id/text_transfer_confirm_msg5"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="준영은행"
+                                android:id="@+id/text_transfer_confirm_inst_name"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="수취인계좌번호 :  "
+                                android:id="@+id/text_transfer_confirm_msg6"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="110-325-467846"
+                                android:id="@+id/text_transfer_confirm_account_number"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textStyle="bold"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="받  는  분  성 명 :  "
+                                android:id="@+id/text_transfer_confirm_msg7"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="홍길동"
+                                android:id="@+id/text_transfer_confirm_name"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textStyle="bold"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="보  내  실  금 액 :  "
+                                android:id="@+id/text_transfer_confirm_msg8"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="43 원"
+                                android:id="@+id/text_transfer_confirm_amount"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:paddingRight="10dp"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="수        수       료 :  "
+                                android:id="@+id/text_transfer_confirm_msg9"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="0 원"
+                                android:id="@+id/text_transfer_confirm_fee"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:paddingRight="10dp"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="의        뢰       인 :  "
+                                android:id="@+id/text_transfer_confirm_msg10"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="김철수"
+                                android:id="@+id/text_transfer_confirm_sender"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textSize="10dp" />
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical">
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="의뢰인 변경 또는 입금통장 표시내용 변경"
+                android:id="@+id/btnTConfirmChange"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/main_normal_button"
+                android:layout_margin="3dp"
+                android:textSize="14dp"
+                android:layout_weight="2" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

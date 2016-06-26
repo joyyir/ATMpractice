@@ -8,13 +8,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class AmountConfirmFragment extends Fragment {
+    public int amount;
+    private boolean manFlag, cheonFlag;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_amount_confirm, container, false);
+        amount = 0;
 
+        View view = inflater.inflate(R.layout.fragment_amount_confirm, container, false);
+        manFlag = false;
+        cheonFlag = false;
         Button[] btnArr = new Button[10];
 
         btnArr[0] = (Button)view.findViewById(R.id.btnAmt0);
@@ -30,8 +37,12 @@ public class AmountConfirmFragment extends Fragment {
         Button btnBack = (Button)view.findViewById(R.id.btnAmtBack);
         Button btnDel = (Button)view.findViewById(R.id.btnAmtDel);
         Button btnOk = (Button)view.findViewById(R.id.btnAmtOk);
+        Button btnMan = (Button)view.findViewById(R.id.btnAmtMan);
+        Button btnCheon = (Button)view.findViewById(R.id.btnAmtCheon);
+        Button btnWon = (Button)view.findViewById(R.id.btnAmtWon);
 
         final EditText et = (EditText)view.findViewById(R.id.etAmt);
+        final TextView tvAmountWon = (TextView)view.findViewById(R.id.text_amount_confirm_won);
 
         for(int i = 0; i <= 9; i++){
             final int idx = i;
@@ -55,14 +66,42 @@ public class AmountConfirmFragment extends Fragment {
         btnDel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tvAmountWon.setText("원");
+                manFlag = cheonFlag = false;
                 et.getText().clear();
             }
         });
 
-        btnOk.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener okAndWon = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                amount = Integer.parseInt(et.getText().toString());
+                if(manFlag) amount *= 10000;
+                if(cheonFlag) amount *= 1000;
+                Common.setTransferAmount(amount);
                 MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new PasswordFragment());
+            }
+        };
+        btnOk.setOnClickListener(okAndWon);
+        btnWon.setOnClickListener(okAndWon);
+
+        btnMan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!cheonFlag && !manFlag){
+                    tvAmountWon.setText("만원");
+                    manFlag = true;
+                }
+            }
+        });
+
+        btnCheon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!cheonFlag && !manFlag){
+                    tvAmountWon.setText("천원");
+                    cheonFlag = true;
+                }
             }
         });
 
