@@ -75,7 +75,10 @@ public class AmountConfirmFragment extends Fragment {
         View.OnClickListener okAndWon = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                amount = Integer.parseInt(et.getText().toString());
+                if(et.getText().length() > 0)
+                    amount = Integer.parseInt(et.getText().toString());
+                else
+                    amount = 0;
                 if(manFlag) amount *= 10000;
                 if(cheonFlag) amount *= 1000;
                 Common.setTransferAmount(amount);

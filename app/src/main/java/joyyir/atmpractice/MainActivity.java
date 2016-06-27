@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        Fragment fragment = new MainFragment();
-        replaceFragment(R.id.ll_fragment_atm_screen, fragment);
+        replaceFragment(R.id.ll_fragment_atm_screen, new MainFragment());
     }
 
     public void replaceFragment(int fragAreaId, Fragment newFragment) {

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="joyyir.atmpractice.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:background="@color/atm_display_bg"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/text_continue_transfer"
+                android:text="연속 이체"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:singleLine="false"
+                android:enabled="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="3">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/white_border"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="3dp"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="이체거래를 계속 하시겠습니까?"
+                            android:id="@+id/text_continue_transfer_msg01"
+                            android:textColor="#000000"
+                            android:textAlignment="center"
+                            android:textSize="10dp" />
+
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_border"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="3dp"
+                        android:padding="5dp">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="거  래  금  액 : "
+                                android:id="@+id/text_continue_transfer_msg02"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="43 원"
+                                android:id="@+id/text_continue_transfer_amount"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:paddingRight="10dp"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="거래후잔액 : "
+                                android:id="@+id/text_continue_transfer_msg03"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="0 원"
+                                android:id="@+id/text_continue_transfer_balance"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:paddingRight="10dp"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="수    수     료 : "
+                                android:id="@+id/text_continue_transfer_msg04"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="0 원"
+                                android:id="@+id/text_continue_transfer_fee"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:paddingRight="10dp"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                    </TableLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@drawable/white_border"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="버튼을 선택하시면 휴대폰 메시지를 보내드립니다"
+                            android:id="@+id/text_continue_transfer_msg05"
+                            android:textColor="#000000"
+                            android:textAlignment="center"
+                            android:textSize="10dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="28dp"
+                                android:text="SMS알림(무료)"
+                                android:id="@+id/btnContSMS"
+                                android:textSize="10dp"
+                                android:background="@drawable/main_green_button"
+                                android:layout_margin="3dp" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/cbContSMS"
+                                android:textColor="#000000"
+                                android:checked="false"
+                                android:buttonTint="#777777"
+                                android:clickable="false"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="예) 홍길동님이 김신한님 신한 110***12345 계좌로\n     15,000원을 입금하셨습니다"
+                            android:id="@+id/text_continue_transfer_msg06"
+                            android:layout_weight="0"
+                            android:textColor="@color/atm_display_bg"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@drawable/white_border"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="버튼을 선택하시면 즐겨 쓰는 입금계좌로 등록됩니다"
+                            android:id="@+id/text_continue_transfer_msg07"
+                            android:textColor="#000000"
+                            android:textAlignment="center"
+                            android:textSize="10dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal" >
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="28dp"
+                                android:text="즐겨 쓰는 입금계좌 등록"
+                                android:id="@+id/btnContFavorite"
+                                android:textSize="10dp"
+                                android:background="@drawable/main_green_button"
+                                android:layout_margin="3dp" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/cbContFavorite"
+                                android:textColor="#000000"
+                                android:checked="false"
+                                android:buttonTint="#777777"
+                                android:clickable="false" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="자주 이체하시는 계좌를 등록해 놓으시면 계좌이체를 보다 편리하게\n이용하실 수 있습니다"
+                            android:id="@+id/text_continue_transfer_msg08"
+                            android:layout_weight="0"
+                            android:textColor="#000000"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:text="계속"
+                    android:id="@+id/btnContCont"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:text="종료"
+                    android:id="@+id/btnContExit"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_red_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"></LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

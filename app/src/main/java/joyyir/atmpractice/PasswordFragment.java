@@ -53,7 +53,7 @@ public class PasswordFragment extends Fragment {
                             }
                         };
                         handler.sendEmptyMessageDelayed(0, Common.DELAY);
-                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ReadingCardFragment());
+                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ProcessingFragment());
                     }
                 }
             });

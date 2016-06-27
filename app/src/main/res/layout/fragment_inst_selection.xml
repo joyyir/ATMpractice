@@ -48,7 +48,7 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:text="즐겨쓰는\n입금계좌조회"
-                android:id="@+id/btnInstSelOk"
+                android:id="@+id/btnInstFavorite"
                 android:layout_gravity="center"
                 android:textSize="11dp"
                 android:background="@drawable/main_green_button"

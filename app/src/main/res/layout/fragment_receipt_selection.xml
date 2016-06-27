@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="joyyir.atmpractice.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:background="@color/atm_display_bg"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/text_receipt_selection"
+                android:text="명세표 선택"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:singleLine="false"
+                android:enabled="false" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="3">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_border"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="5dp">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="   명세표를 받으시겠습니까?"
+                                android:id="@+id/text_receipt_selection_msg01"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textSize="13dp" />
+
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="거  래  금  액 : "
+                                android:id="@+id/text_receipt_selection_msg02"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="43 원"
+                                android:id="@+id/text_receipt_selection_amount"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:paddingRight="10dp"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="거래후잔액 : "
+                                android:id="@+id/text_receipt_selection_msg03"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="0 원"
+                                android:id="@+id/text_receipt_selection_balance"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:paddingRight="10dp"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:text="수    수     료 : "
+                                android:id="@+id/text_receipt_selection_msg04"
+                                android:layout_weight="1"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="0 원"
+                                android:id="@+id/text_receipt_selection_fee"
+                                android:layout_weight="2"
+                                android:textColor="#000000"
+                                android:textAlignment="textEnd"
+                                android:paddingRight="10dp"
+                                android:textSize="10dp" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/white_border"
+                        android:gravity="center_horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="   다른 거래를 더 하시겠습니까?"
+                            android:id="@+id/text_receipt_selection_msg05"
+                            android:textColor="#000000"
+                            android:textSize="13dp" />
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="28dp"
+                                android:text="계속거래"
+                                android:id="@+id/btnReceiptCont"
+                                android:textSize="13dp"
+                                android:background="@drawable/main_green_button"
+                                android:layout_margin="3dp" />
+
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/cbReceiptCont"
+                                android:textColor="#000000"
+                                android:checked="false"
+                                android:buttonTint="#777777"
+                                android:clickable="false" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="* 계속 거래를 원하시면 위의 [계속거래]를\n   눌러 주십시오. 카드는 계속거래 등 모든 거래를\n   마친 후에 반환됩니다."
+                            android:id="@+id/text_receipt_selection_msg06"
+                            android:layout_weight="0"
+                            android:textColor="@color/atm_display_bg"
+                            android:textSize="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:text="명세표 출력"
+                    android:id="@+id/btnReceiptPrint"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:text="명세표 생략"
+                    android:id="@+id/btnReceiptOmit"
+                    android:layout_gravity="center"
+                    android:textSize="16dp"
+                    android:background="@drawable/main_red_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4"></LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
