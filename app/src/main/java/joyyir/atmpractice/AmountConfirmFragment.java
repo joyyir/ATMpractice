@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import joyyir.atmpractice.Shared.Common;
+
 public class AmountConfirmFragment extends Fragment {
     public int amount;
     private boolean manFlag, cheonFlag;
@@ -22,6 +24,8 @@ public class AmountConfirmFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_amount_confirm, container, false);
         manFlag = false;
         cheonFlag = false;
+
+        Button btnCancel = (Button)view.findViewById(R.id.btnAmtCancel);
         Button[] btnArr = new Button[10];
 
         btnArr[0] = (Button)view.findViewById(R.id.btnAmt0);
@@ -43,6 +47,13 @@ public class AmountConfirmFragment extends Fragment {
 
         final EditText et = (EditText)view.findViewById(R.id.etAmt);
         final TextView tvAmountWon = (TextView)view.findViewById(R.id.text_amount_confirm_won);
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
+            }
+        });
 
         for(int i = 0; i <= 9; i++){
             final int idx = i;

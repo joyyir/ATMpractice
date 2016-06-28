@@ -3,14 +3,14 @@ package joyyir.atmpractice;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import joyyir.atmpractice.Shared.Common;
 
 public class ContinueTransferFragment extends Fragment {
     @Nullable
@@ -60,14 +60,9 @@ public class ContinueTransferFragment extends Fragment {
             }
         });
 
-        View.OnClickListener unavailBtnListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast toast = Toast.makeText(getContext().getApplicationContext(), "'종료'를 누르세요", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
-            }
-        };
+
+
+        View.OnClickListener unavailBtnListener = new Common.ToastClickListener("'종료'를 누르세요");
 
         for(int i = 0; i < 1; i++){
             unavailButtonArr[i].setOnClickListener(unavailBtnListener);

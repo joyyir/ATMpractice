@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import joyyir.atmpractice.Shared.Common;
+
 public class DragTakeCardReceipt extends Fragment {
     private ImageView imgATMcardHole;
     private final String tagImgATMcardHole = "tagImgATMcardHole2";

@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import joyyir.atmpractice.Shared.Common;
+
 public class PasswordFragment extends Fragment {
     private String password;
     @Nullable
@@ -19,6 +21,8 @@ public class PasswordFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_password, container, false);
         password = "";
+
+        Button btnCancel = (Button)view.findViewById(R.id.btnPasswordCancel);
         Button[] btnArr = new Button[10];
 
         btnArr[0] = (Button)view.findViewById(R.id.btnPassword0);
@@ -35,6 +39,13 @@ public class PasswordFragment extends Fragment {
         Button btnDel = (Button)view.findViewById(R.id.btnPasswordDel);
 
         final EditText et = (EditText)view.findViewById(R.id.etPassword);
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
+            }
+        });
 
         for(int i = 0; i <= 9; i++){
             final int idx = i;

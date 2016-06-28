@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import joyyir.atmpractice.Shared.Common;
+
 public class TransferConfirmFragment extends Fragment {
     @Nullable
     @Override
@@ -16,6 +18,8 @@ public class TransferConfirmFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_transfer_confirm, container, false);
 
         Button btnOk = (Button) view.findViewById(R.id.btnTConfirmOk);
+        Button btnCancel = (Button) view.findViewById(R.id.btnTConfirmCancel);
+        Button btnChange = (Button) view.findViewById(R.id.btnTConfirmChange);
 
         TextView tvInstName = (TextView) view.findViewById(R.id.text_transfer_confirm_inst_name);
         TextView tvAccount = (TextView) view.findViewById(R.id.text_transfer_confirm_account_number);
@@ -31,6 +35,15 @@ public class TransferConfirmFragment extends Fragment {
                 MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ContinueTransferFragment());
             }
         });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
+            }
+        });
+
+        btnChange.setOnClickListener(new Common.ToastClickListener("사용불가"));
 
         tvInstName.setText(Common.getInstitutionName());
         tvAccount.setText(Common.getReceiverAccountNumber());

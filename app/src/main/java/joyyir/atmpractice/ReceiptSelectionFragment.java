@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import joyyir.atmpractice.Shared.Common;
+
 public class ReceiptSelectionFragment extends Fragment {
     @Nullable
     @Override

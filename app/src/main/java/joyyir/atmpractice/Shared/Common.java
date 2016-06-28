@@ -1,20 +1,29 @@
-package joyyir.atmpractice;
+package joyyir.atmpractice.Shared;
 
 import android.os.Handler;
 import android.os.Message;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Toast;
+
+import joyyir.atmpractice.GoodbyeFragment;
+import joyyir.atmpractice.IllegalCardCaution;
+import joyyir.atmpractice.MainActivity;
+import joyyir.atmpractice.MainFragment;
+import joyyir.atmpractice.R;
 
 /**
  * Created by Jang Jun Yeong on 2016-06-26.
  */
 public class Common {
-    static final int DELAY = 2000; // 2초
-    static String[] institutionNames = {"신한은행", "국민은행", "농협", "우리은행", "하나은행", "제주은행", "기업은행", "외환은행", "SC은행(제일)", "우체국", "한국씨티은행", "새마을금고", "부산은행", "대구은행", "수협"};
+    public static final int DELAY = 2000; // 2초
+    public static String[] institutionNames = {"신한은행", "국민은행", "농협", "우리은행", "하나은행", "제주은행", "기업은행", "외환은행", "SC은행(제일)", "우체국", "한국씨티은행", "새마을금고", "부산은행", "대구은행", "수협"};
 
-    static int receiverInstCode;
-    static String receiverAccountNumber;
-    static int transferAmount;
+    private static int receiverInstCode;
+    private static String receiverAccountNumber;
+    private static int transferAmount;
 
-    static boolean isCardInserted = false;
+    private static boolean isCardInserted = false;
 
 
     public static boolean isCardInserted() {
@@ -69,5 +78,20 @@ public class Common {
 
     public static void setTransferAmount(int transferAmount) {
         Common.transferAmount = transferAmount;
+    }
+
+    public static class ToastClickListener implements View.OnClickListener{
+        private String m_msg;
+        public ToastClickListener(String msg) {
+            super();
+            m_msg = msg;
+        }
+
+        @Override
+        public void onClick(View view) {
+            Toast toast = Toast.makeText(MainActivity.getInstance().getApplicationContext(), m_msg, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0, 0);
+            toast.show();
+        }
     }
 }

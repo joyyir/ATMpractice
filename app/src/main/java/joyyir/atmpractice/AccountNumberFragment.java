@@ -9,12 +9,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import joyyir.atmpractice.Shared.Common;
+
 public class AccountNumberFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_account_number, container, false);
 
+        Button btnCancel = (Button)view.findViewById(R.id.btnAccNumCancel);
         Button[] btnArr = new Button[10];
 
         btnArr[0] = (Button)view.findViewById(R.id.btnAccNum0);
@@ -32,6 +35,13 @@ public class AccountNumberFragment extends Fragment {
         Button btnAccOk = (Button)view.findViewById(R.id.btnAccNumOk);
 
         final EditText et = (EditText)view.findViewById(R.id.etAccNum);
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
+            }
+        });
 
         for(int i = 0; i <= 9; i++){
             final int idx = i;

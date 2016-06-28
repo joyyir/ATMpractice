@@ -24,7 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:text="취소"
-                android:id="@+id/btnTtypeCancel"
+                android:id="@+id/btnTransferCancel"
                 android:layout_gravity="center"
                 android:textSize="20dp"
                 android:background="@drawable/main_red_button"

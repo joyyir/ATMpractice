@@ -3,12 +3,12 @@ package joyyir.atmpractice;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+
+import joyyir.atmpractice.Shared.Common;
 
 public class InstSelectionFragment extends Fragment {
     @Nullable
@@ -42,7 +42,7 @@ public class InstSelectionFragment extends Fragment {
         btnInstCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new MainFragment());
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
             }
         });
 
@@ -57,14 +57,7 @@ public class InstSelectionFragment extends Fragment {
             });
         }
 
-        View.OnClickListener unavailBtnListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast toast = Toast.makeText(getContext().getApplicationContext(), "사용불가", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
-            }
-        };
+        View.OnClickListener unavailBtnListener = new Common.ToastClickListener("사용불가");
 
         for(int i = 0; i < 2; i++){
             unavailButtonArr[i].setOnClickListener(unavailBtnListener);

@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import joyyir.atmpractice.Shared.Common;
+
 public class IllegalCardCaution extends Fragment {
     public int amount;
     private boolean manFlag, cheonFlag;
@@ -36,6 +38,14 @@ public class IllegalCardCaution extends Fragment {
                 MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ReadingCardFragment());
             }
         });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
+            }
+        });
+
         return view;
         //return super.onCreateView(inflater, container, savedInstanceState);
     }
