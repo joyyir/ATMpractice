@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         replaceFragment(R.id.ll_fragment_atm_screen, new MainFragment());
+        //replaceFragment(R.id.ll_fragment_atm_screen, new GetCardFragment());
     }
 
     @Override

@@ -2,6 +2,11 @@ package joyyir.atmpractice;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,29 +21,26 @@ import android.widget.LinearLayout;
 
 import joyyir.atmpractice.Shared.Common;
 
-public class DragInsertCardFragment extends Fragment {
-    private ImageView imgATMcardHole, imgCard;
-    private final String tagImgATMcardHole = "tagImgATMcardHole", tagImgCard = "tagImgCard";
+public class DragTakeCard extends Fragment {
+    private ImageView imgATMcardHole;
+    private final String tagImgATMcardHole = "tagImgATMcardHole3";
     private View thisView;
-    private Bundle args;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_drag_insert_card, container, false);
+        View view = inflater.inflate(R.layout.fragment_drag_take_card, container, false);
         thisView = view;
-        args = this.getArguments();
 
-        LinearLayout llBottom = (LinearLayout)view.findViewById(R.id.ll_drag_insert_card_bottom);
-        LinearLayout llTopHole = (LinearLayout)view.findViewById(R.id.ll_drag_insert_card_top_hole);
+        LinearLayout llBottom = (LinearLayout)view.findViewById(R.id.ll_drag_take_card_bottom);
+        LinearLayout llTopHole = (LinearLayout)view.findViewById(R.id.ll_drag_take_card_hole);
 
-        imgATMcardHole = (ImageView)view.findViewById(R.id.imgDragInsertCardHole);
-        imgCard = (ImageView)view.findViewById(R.id.imgDragInsertCardCard);
+        imgATMcardHole = (ImageView)view.findViewById(R.id.imgDragTakeCardHole);
+
 
         imgATMcardHole.setTag(tagImgATMcardHole);
-        imgCard.setTag(tagImgCard);
 
-        imgCard.setOnLongClickListener(new View.OnLongClickListener() {
+        imgATMcardHole.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
                 // 태그 생성
@@ -49,7 +51,7 @@ public class DragInsertCardFragment extends Fragment {
                 View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
 
                 view.startDrag(data, // data to be dragged
-                        shadowBuilder, // drag shadow
+                        new CanvasShadow(view),//shadowBuilder, // drag shadow
                         view, // 드래그 드랍할  Vew
                         0 // 필요없은 플래그
                 );
@@ -60,9 +62,10 @@ public class DragInsertCardFragment extends Fragment {
             }
         });
 
+        DragListener dragListener = new DragListener();
         //imgCard.setOnDragListener(new DragListener());
-        llTopHole.setOnDragListener(new DragListener());
-        llBottom.setOnDragListener(new DragListener());
+        llTopHole.setOnDragListener(dragListener);
+        llBottom.setOnDragListener(dragListener);
 
         return view;
         //return super.onCreateView(inflater, container, savedInstanceState);
@@ -74,11 +77,13 @@ public class DragInsertCardFragment extends Fragment {
         @Override
         public boolean onDrag(View view, DragEvent dragEvent) {
             View v = (View) dragEvent.getLocalState();
+            final ImageView imgCardReceiptHole = (ImageView) v.findViewById(R.id.imgDragTakeCardHole);
 
             switch(dragEvent.getAction()){
                 // 이미지를 드래그 시작될때
                 case DragEvent.ACTION_DRAG_STARTED:
-                    v.setVisibility(View.INVISIBLE);
+                    //v.setVisibility(View.INVISIBLE);
+                    imgCardReceiptHole.setImageResource(R.drawable.atm_card_hole);
                     Log.d("DragClickListener", "ACTION_DRAG_STARTED");
                     break;
 
@@ -99,34 +104,61 @@ public class DragInsertCardFragment extends Fragment {
                 case DragEvent.ACTION_DROP:
                     Log.d("DragClickListener", "ACTION_DROP");
 
-                    if (view == thisView.findViewById(R.id.ll_drag_insert_card_top_hole)) {
-                        ViewGroup viewgroup = (ViewGroup) v.getParent();
-                        viewgroup.removeView(v);
+                    if (view == thisView.findViewById(R.id.ll_drag_take_card_bottom)) {
+                        //ViewGroup viewgroup = (ViewGroup) v.getParent();
+                        //viewgroup.removeView(v);
 
                         // 카드 들어가는 처리
-                        Log.d("DEBUG", "카드 투입됨");
-                        if(args != null)
-                            Common.insertCard2(args.getString("nextFragmentName"));
-                        else
-                            Common.insertCard();
+                        Log.d("DEBUG", "카드 완전히 뽑음");
+                        Common.takeCard();
                     }
-                    else if(view == thisView.findViewById(R.id.ll_drag_insert_card_bottom)){
-                        v.setVisibility(View.VISIBLE);
+                    else if(view == thisView.findViewById(R.id.ll_drag_take_card_hole)){
+                        imgCardReceiptHole.setImageResource(R.drawable.atm_card);
                         Log.d("DEBUG", "원래 있던 자리인데?");
                     }
-
                     break;
 
                 case DragEvent.ACTION_DRAG_ENDED:
                     Log.d("DragClickListener", "ACTION_DRAG_ENDED");
                     view.setBackground(null); // go back to normal shape
                     if(!dragEvent.getResult())
-                        v.setVisibility(View.VISIBLE);
+                        imgCardReceiptHole.setImageResource(R.drawable.atm_card);
 
                 default:
                     break;
             }
             return true;
+        }
+    }
+
+    class CanvasShadow extends View.DragShadowBuilder {
+        final Bitmap image = BitmapFactory.decodeResource(getResources(), R.drawable.credit_card);
+        int mWidth, mHeight;
+
+        public CanvasShadow(View view) {
+            super(view);
+            //mWidth = view.getWidth();//좌표를 가져와서 멤버 변수에 넣어둠.
+            mWidth = image.getWidth();
+            //mWidth = (int)(1.5 * view.getWidth());
+            //mHeight = view.getHeight();//좌표를 가져와서 멤버 변수에 넣어둠.
+            mHeight = image.getHeight();
+            //mHeight = (int)(1.5 * (view.getWidth() * image.getHeight()) / image.getWidth());
+        }
+
+        @Override
+        public void onProvideShadowMetrics(Point shadowSize, Point shadowTouchPoint) {
+            //섀도우의 크기와 중심점의 좌표를 지정하는 메소드임
+            shadowSize.set(mWidth/3, mHeight/3);//사이즈 지정
+            shadowTouchPoint.set(mWidth/6, mHeight/6);//중심점 지정
+        }
+
+        @Override
+        public void onDrawShadow(Canvas canvas) {
+            Rect src = new Rect(0, 0, mWidth, mHeight);
+            Rect dst = new Rect(0, 0, mWidth/3, mHeight/3);
+            canvas.drawBitmap(image, null, dst, null);
+            //super.onDrawShadow(canvas);
+            //canvas.drawBitmap(image, 0, 0, null);
         }
     }
 }

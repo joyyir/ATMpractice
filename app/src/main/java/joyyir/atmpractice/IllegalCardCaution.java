@@ -27,22 +27,32 @@ public class IllegalCardCaution extends Fragment {
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Handler handler = new Handler(){
-                    @Override
-                    public void handleMessage(Message msg) {
-                        super.handleMessage(msg);
-                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new MainFragment());
-                    }
-                };
-                handler.sendEmptyMessageDelayed(0, Common.DELAY);
-                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ReadingCardFragment());
+                if(Common.isCardInserted()) {
+                    Handler handler = new Handler() {
+                        @Override
+                        public void handleMessage(Message msg) {
+                            super.handleMessage(msg);
+                            MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new MainFragment());
+                        }
+                    };
+                    handler.sendEmptyMessageDelayed(0, Common.DELAY);
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ReadingCardFragment());
+                }
+                else{
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new FraudCautionFragment());
+                }
             }
         });
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
+                if(Common.isCardInserted()) {
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardFragment());
+                }
+                else{
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new MainFragment());
+                }
             }
         });
 

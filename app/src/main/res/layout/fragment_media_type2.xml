@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="joyyir.atmpractice.MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3"
+        android:background="@color/atm_display_bg"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="취소"
+                android:id="@+id/btnMedia2Cancel"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:background="@drawable/main_red_button"
+                android:layout_margin="6dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/text_media_type2"
+                android:text="매체 선택"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:singleLine="false"
+                android:enabled="false" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"></LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="3">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgMedia2Msg"
+                    android:src="@drawable/select_transaction2"
+                    android:layout_margin="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:text="카드"
+                    android:id="@+id/btnMedia2Card"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:text="통장"
+                    android:id="@+id/btnMedia2Book"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:text="무매체"
+                    android:id="@+id/btnMedia2Nothing"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:text="휴대폰"
+                    android:id="@+id/btnMedia2Phone"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:text="전자통장"
+                    android:id="@+id/btnMedia2Elec"
+                    android:layout_gravity="center"
+                    android:textSize="20dp"
+                    android:background="@drawable/main_normal_button"
+                    android:layout_margin="3dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"></LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

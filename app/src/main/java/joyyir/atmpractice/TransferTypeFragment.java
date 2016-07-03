@@ -31,7 +31,7 @@ public class TransferTypeFragment extends Fragment {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardFragment());
             }
         });
 
@@ -42,7 +42,12 @@ public class TransferTypeFragment extends Fragment {
                     @Override
                     public void handleMessage(Message msg) {
                         super.handleMessage(msg);
-                        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new MediaTypeFragment());
+                        if(Common.isMediaSelected()){
+                            MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new InstSelectionFragment());
+                        }
+                        else {
+                            MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new MediaTypeFragment());
+                        }
                     }
                 };
                 handler.sendEmptyMessageDelayed(0, Common.DELAY);

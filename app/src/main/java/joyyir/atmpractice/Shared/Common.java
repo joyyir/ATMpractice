@@ -2,6 +2,7 @@ package joyyir.atmpractice.Shared;
 
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
@@ -11,6 +12,8 @@ import joyyir.atmpractice.IllegalCardCaution;
 import joyyir.atmpractice.MainActivity;
 import joyyir.atmpractice.MainFragment;
 import joyyir.atmpractice.R;
+import joyyir.atmpractice.ReadingCardFragment;
+import joyyir.atmpractice.TransferTypeFragment;
 
 /**
  * Created by Jang Jun Yeong on 2016-06-26.
@@ -24,7 +27,15 @@ public class Common {
     private static int transferAmount;
 
     private static boolean isCardInserted = false;
+    private static boolean isMediaSelected = false;
 
+    public static boolean isMediaSelected() {
+        return isMediaSelected;
+    }
+
+    public static void setIsMediaSelected(boolean isMediaSelected) {
+        Common.isMediaSelected = isMediaSelected;
+    }
 
     public static boolean isCardInserted() {
         return isCardInserted;
@@ -41,6 +52,23 @@ public class Common {
     public static void insertCard(){
         setIsCardInserted(true);
         MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new IllegalCardCaution());
+    }
+
+    public static void insertCard2(final String nextFragmentName){
+        setIsCardInserted(true);
+        Handler handler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                if(nextFragmentName == "TransferTypeFragment")
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new TransferTypeFragment());
+                else{
+                    Log.d("insertCard2()", "nextFragmentName exception!");
+                }
+            }
+        };
+        handler.sendEmptyMessageDelayed(0, Common.DELAY);
+        MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new ReadingCardFragment());
     }
 
     public static void takeCard(){

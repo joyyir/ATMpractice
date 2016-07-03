@@ -36,14 +36,18 @@ public class ReceiptSelectionFragment extends Fragment {
             }
         });
 
-        View.OnClickListener listener = new View.OnClickListener() {
+        btnOmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardFragment());
+            }
+        });
+        btnPrint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
             }
-        };
-        btnOmit.setOnClickListener(listener);
-        btnPrint.setOnClickListener(listener);
+        });
 
         return view;
         //return super.onCreateView(inflater, container, savedInstanceState);

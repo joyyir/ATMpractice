@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import joyyir.atmpractice.Shared.Common;
+
 public class FraudCautionFragment extends Fragment {
     @Nullable
     @Override
@@ -20,14 +22,24 @@ public class FraudCautionFragment extends Fragment {
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardAndReceiptFragment());
+                if(Common.isCardInserted()) {
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new GetCardFragment());
+                }
+                else{
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new MainFragment());
+                }
             }
         });
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new TransferTypeFragment());
+                if(Common.isCardInserted()) {
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new TransferTypeFragment());
+                }
+                else{
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new MediaType2Fragment());
+                }
             }
         });
         return view;

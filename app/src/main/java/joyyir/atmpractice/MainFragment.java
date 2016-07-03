@@ -41,9 +41,7 @@ public class MainFragment extends Fragment {
                     MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new FraudCautionFragment());
                 }
                 else{
-                    Toast toast = Toast.makeText(getContext().getApplicationContext(), "먼저 카드를 넣으세요", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
-                    toast.show();
+                    MainActivity.getInstance().replaceFragment(R.id.ll_fragment_atm_screen, new IllegalCardCaution());
                 }
             }
         });
@@ -51,16 +49,16 @@ public class MainFragment extends Fragment {
         View.OnClickListener unavailBtnListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(Common.isCardInserted()){
+//                if(Common.isCardInserted()){
                     Toast toast = Toast.makeText(getContext().getApplicationContext(), "'계좌이체'를 누르세요", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
-                }
-                else{
-                    Toast toast = Toast.makeText(getContext().getApplicationContext(), "먼저 카드를 넣으세요", Toast.LENGTH_SHORT);
-                    toast.setGravity(Gravity.CENTER, 0, 0);
-                    toast.show();
-                }
+//                }
+//                else{
+//                    Toast toast = Toast.makeText(getContext().getApplicationContext(), "먼저 카드를 넣으세요", Toast.LENGTH_SHORT);
+//                    toast.setGravity(Gravity.CENTER, 0, 0);
+//                    toast.show();
+//                }
             }
         };
 
